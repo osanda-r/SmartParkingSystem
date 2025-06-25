@@ -1,5 +1,5 @@
 // JS for real-time data handling
-const client = mqtt.connect("wss://broker.hivemq.com:8884/mqtt");
+const client = mqtt.connect("wss://broker.hive.com:8884/mqtt");
 const spotContainer = document.getElementById("spot-container");
 const spots = {};
 
