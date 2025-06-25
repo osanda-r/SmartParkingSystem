@@ -16,7 +16,7 @@ def simulate_occupancy():
     while True:
         spot_id = random.choice(spot_ids)
         occupied = random.choice([True, False])
-        vehicle_id = f"SIM-{random.randint(1000, 9999)}" if occupied else None
+        vehicle_id = f"VHI-{random.randint(1000, 9999)}" if occupied else None
 
         payload = {
             "spot_id": spot_id,
