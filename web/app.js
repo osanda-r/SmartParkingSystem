@@ -45,20 +45,29 @@ function triggerEmergency() {
     .then(alert);
 }
 
-function controlGate(id) {
-  fetch(`http://localhost:5000/gate/${id}`, { method: "POST" })
-    .then((res) => res.text())
-    .then(alert);
+function controlGate() {
+  const id = prompt("Enter Gate ID to control:");
+  if (id) {
+    fetch(`http://localhost:5000/gate/${id}`, { method: "POST" })
+      .then((res) => res.text())
+      .then(alert);
+  }
 }
 
-function processPayment(id) {
-  fetch(`http://localhost:5000/payment/${id}`, { method: "POST" })
-    .then((res) => res.json())
-    .then((data) => alert(`Paid ₹${data.amount} for ${data.duration} mins`));
+function showPaymentDetails() {
+  const id = prompt("Enter Spot ID for payment details:");
+  if (id) {
+    fetch(`http://localhost:5000/payment/${id}`, { method: "POST" })
+      .then((res) => res.json())
+      .then((data) => alert(`Paid ₹${data.amount} for ${data.duration} mins`));
+  }
 }
 
-function captureCamera(id) {
-  fetch(`http://localhost:5000/camera/${id}`, { method: "POST" })
-    .then((res) => res.text())
-    .then((msg) => alert(`Camera: ${msg}`));
+function controlCamera() {
+  const id = prompt("Enter Camera ID to control:");
+  if (id) {
+    fetch(`http://localhost:5000/camera/${id}`, { method: "POST" })
+      .then((res) => res.text())
+      .then((msg) => alert(`Camera: ${msg}`));
+  }
 }
