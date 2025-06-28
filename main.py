@@ -1,4 +1,3 @@
-# Entry point for Smart Parking System
 from mqtt.client import MQTTClient
 from db.database import DatabaseManager
 from auth.auth import AuthManager
